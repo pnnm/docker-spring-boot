@@ -1,9 +1,4 @@
-FROM java:8
-
-COPY target/docker-spring-boot.jar /opt/app.jar
-
-
-WORKDIR /opt
+FROM openjdk:8
+ADD target/docker-spring-boot.jar docker-spring-boot.jar
 EXPOSE 8084
-
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/opt/app.jar"]
+ENTRYPOINT ["java","-jar","docker-spring-boot.jar"]
