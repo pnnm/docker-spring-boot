@@ -3,4 +3,5 @@ VOLUME /tmp
 COPY target/docker-spring-boot.jar /opt/app.jar
 
 EXPOSE 8084
+WORKDIR /opt
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/opt/app.jar"]
